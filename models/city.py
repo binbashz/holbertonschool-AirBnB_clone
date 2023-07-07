@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 """
-User module for AirBnB clone project.
+City module for AirBnB clone project.
 """
 from models.base_model import BaseModel
 
 
-class User(BaseModel):
+class City(BaseModel):
     """
-    User class inherits from BaseModel.
+    City class inherits from BaseModel.
     """
 
     def __init__(self, *args, **kwargs):
         """
-        Initializes a new User instance.
+        Initializes a new City instance.
         """
         super().__init__(*args, **kwargs)
+        self.state_id = ""
+        self.name = ""
