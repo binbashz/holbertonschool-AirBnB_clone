@@ -6,6 +6,22 @@ import sys
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
+
+class_dict = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Review": Review
+            }
 
 
 class HBNBCommand(cmd.Cmd):
@@ -33,35 +49,41 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
+    def help_quit(self):
+        """ Help message for quit command """
+
+        print("Quit command to exit the program.")
+        print()
+
     def do_create(self, arg):
         """
         Create a new instance of BaseModel, save it, and print the id.
         """
-        if not arg:
+        args_list = arg.split()
+        if len(args_list) < 1:
             print("** class name missing **")
+        elif args_list[0] in class_dict.keys():
+            new_instance = class_dict[args_list[0]]()
+            new_instance.save()
+            print(new_instance.id)
         else:
-            try:
-                new_instance = eval(arg)()
-                new_instance.save()
-                print(new_instance.id)
-            except NameError:
-                print("** class doesn't exist **")
+            print("** class doesn't exist **")
 
     def do_show(self, arg):
         """
         Show the string representation of an instance based
         on the class name and id.
         """
-        args = arg.split()
-        if not args:
+        args_list = arg.split()
+        if len(args_list) < 1:
             print("** class name missing **")
-        elif args[0] not in storage.classes:
-            print("** class doesn't exist **")
-        elif len(args) < 2:
+        elif len(args_list) < 2:
             print("** instance id missing **")
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
         else:
-            key = args[0] + "." + args[1]
-            if key in storage.all():
+            key = args_list[0] + "." + args_list[1]
+            if key in storage.all().keys():
                 print(storage.all()[key])
             else:
                 print("** no instance found **")
@@ -70,16 +92,16 @@ class HBNBCommand(cmd.Cmd):
         """
         Destroy an instance based on the class name and id.
         """
-        args = arg.split()
-        if not args:
+        args_list = arg.split()
+        if len(args_list) < 1:
             print("** class name missing **")
-        elif args[0] not in storage.classes:
-            print("** class doesn't exist **")
-        elif len(args) < 2:
+        elif len(args_list) < 2:
             print("** instance id missing **")
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
         else:
-            key = args[0] + "." + args[1]
-            if key in storage.all():
+            key = args_list[0] + "." + args_list[1]
+            if key in storage.all().keys():
                 del storage.all()[key]
                 storage.save()
             else:
@@ -100,24 +122,24 @@ class HBNBCommand(cmd.Cmd):
         """
         Update an instance based on the class name and id.
         """
-        args = arg.split()
-        if not args:
+        args_list = arg.split()
+        if len(args_list) < 1:
             print("** class name missing **")
-        elif args[0] not in storage.classes:
-            print("** class doesn't exist **")
-        elif len(args) < 2:
+        elif len(args_list) < 2:
             print("** instance id missing **")
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
         else:
-            key = args[0] + "." + args[1]
-            if key in storage.all():
-                if len(args) < 3:
+            key = args_list[0] + "." + args_list[1]
+            if key in storage.all().keys():
+                if len(args_list) < 3:
                     print("** attribute name missing **")
-                elif len(args) < 4:
+                elif len(args_list) < 4:
                     print("** value missing **")
                 else:
                     instance = storage.all()[key]
-                    attr_name = args[2]
-                    attr_value = args[3].strip('"')
+                    attr_name = args_list[2]
+                    attr_value = args_list[3].strip('"')
                     if hasattr(instance, attr_name):
                         attr_type = type(getattr(instance, attr_name))
                         setattr(instance, attr_name, attr_type(attr_value))
