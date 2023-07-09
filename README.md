@@ -98,7 +98,8 @@ All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest
 
 --------------------------------------------------------------------------------------------------------
 
-### The command interpreter, also known as the console, allows users to interact with classes using several commands.
+### The command interpreter, also known as the console,
+### allows users to interact with classes using several commands.
 
 How to use it
 
@@ -114,3 +115,16 @@ The console provides the ability to manage objects, view their information, and 
 
 To quit the console, the quit command does just fine. Ctrl+D (EOF) is supported as well.
 
+
+### Examples
+`create BaseModel`
+
+`create User`
+
+`all BaseModel`
+
+`destroy BaseModel` 7aff9a-6318-345345tg-87b6-9o0-23480934c55907
+
+`all`
+
+`quit`
