@@ -73,9 +73,15 @@ def do_show(self, arg):
         args = arg.split()
         if not args:
             print("** class name missing **")
+<<<<<<< HEAD
         elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
+=======
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
+        elif len(args_list) < 2:
+>>>>>>> 1138f5b326fb1f12829b0a967b4e810731b55176
             print("** instance id missing **")
         else:
             key = "{}.{}".format(args[0], args[1])
@@ -91,9 +97,15 @@ def do_destroy(self, arg):
         args = arg.split()
         if not args:
             print("** class name missing **")
+<<<<<<< HEAD
         elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
+=======
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
+        elif len(args_list) < 2:
+>>>>>>> 1138f5b326fb1f12829b0a967b4e810731b55176
             print("** instance id missing **")
         else:
             key = "{}.{}".format(args[0], args[1])
@@ -108,6 +120,7 @@ def do_all(self, arg):
         Print all string representations of instances based on the class name (if provided)
         """
         args = arg.split()
+<<<<<<< HEAD
         objects = storage.all()
         if not args:
             print([str(obj) for obj in objects.values()])
@@ -116,6 +129,19 @@ def do_all(self, arg):
             print([str(obj) for key, obj in objects.items() if key.startswith(class_name)])
         else:
             print("** class doesn't exist **")
+=======
+        if len(args) < 1:
+            instances = [str(instance) for instance in storage.all().values()]
+            print(instances)
+        elif args[0] not in class_dict.keys():
+            print("** class doesn't exist **")
+        else:
+            selected_values = []
+            for k, v in storage.all().items():
+                if k.startswith(args[0]):
+                    selected_values.append(str(v))
+            print(selected_values)
+>>>>>>> 1138f5b326fb1f12829b0a967b4e810731b55176
 
 def do_update(self, arg):
         """
@@ -124,9 +150,15 @@ def do_update(self, arg):
         args = arg.split()
         if not args:
             print("** class name missing **")
+<<<<<<< HEAD
         elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
+=======
+        elif args_list[0] not in class_dict.keys():
+            print("** class doesn't exist **")
+        elif len(args_list) < 2:
+>>>>>>> 1138f5b326fb1f12829b0a967b4e810731b55176
             print("** instance id missing **")
         else:
             key = "{}.{}".format(args[0], args[1])
