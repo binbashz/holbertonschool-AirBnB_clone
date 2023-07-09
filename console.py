@@ -112,7 +112,7 @@ class HBNBCommand(cmd.Cmd):
         Print string representation of all instances based on the class name.
         """
         args = arg.split()
-        if args and args[0] not in storage.classes:
+        if args and args[0] not in class_dict.keys():
             print("** class doesn't exist **")
         else:
             instances = [str(instance) for instance in storage.all().values()]

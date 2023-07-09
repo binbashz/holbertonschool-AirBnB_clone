@@ -10,8 +10,8 @@ class User(BaseModel):
     User class inherits from BaseModel.
     """
 
-    def __init__(self, *args, **kwargs):
-        """
-        Initializes a new User instance.
-        """
-        super().__init__(*args, **kwargs)
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
+    
