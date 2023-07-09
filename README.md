@@ -93,3 +93,23 @@ $
 ```
 
 All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest discover tests" | bash`
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+### The command interpreter, also known as the console, allows users to interact with classes using several commands.
+
+How to use it
+
+Run the command interpreter with ./console.py
+
+These commands include 
+* `create` for creating and saving new instances, 
+* `show` for displaying instance details, "destroy" for deleting instances, 
+* `all` for listing instances, and
+* `update` for modifying instance attributes and saving changes.
+The console provides the ability to manage objects, view their information, and perform actions on them, enhancing the functionality and control over the program.
+
+To quit the console, the quit command does just fine. Ctrl+D (EOF) is supported as well.
+
