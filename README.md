@@ -93,3 +93,56 @@ $
 ```
 
 All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest discover tests" | bash`
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+#### The command interpreter, also known as the console, allows users to interact with classes using several commands.
+
+
+
+
+##### Project Structure
+The project follows the following structure:
+
+* console.py: The main entry point of the console application.
+* models/: Contains the classes representing AirBnB objects.
+* models/base_model.py: Defines the BaseModel class, from which other classes inherit.
+* models/state.py: Defines the State class.
+* models/place.py: Defines the Place class
+* models/city.py: Defines the City class.
+* models/review.py: Defines the Review class.
+* models/user.py: Defines the User class.
+* models/amenity.py: Defines the Amenity class.
+* models/engine/: Contains the storage engine for persisting data.
+* models/engine/file_storage.py: Implements the FileStorage class for storing data in JSON files.
+* tests/: Contains unit tests for the project.
+
+#### How to use it
+
+Run the command interpreter with ./console.py
+
+These commands include 
+* `create` for creating and saving new instances, 
+* `show` for displaying instance details,
+* `destroy` for deleting instances, 
+* `all` for listing instances, and
+* `update` for modifying instance attributes and saving changes.
+The console provides the ability to manage objects, view their information, and perform actions on them, enhancing the functionality and control over the program.
+
+To quit the console, the quit command does just fine. Ctrl+D (EOF) is supported as well.
+
+
+### Examples
+`create BaseModel`
+
+`create User`
+
+`all BaseModel`
+
+`destroy BaseModel` 7aff9a-6318-345345tg-87b6-9o0-23480934c55907
+
+`all`
+
+`quit`
