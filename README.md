@@ -106,7 +106,8 @@ Run the command interpreter with ./console.py
 
 These commands include 
 * `create` for creating and saving new instances, 
-* `show` for displaying instance details, "destroy" for deleting instances, 
+* `show` for displaying instance details,
+* `destroy` for deleting instances, 
 * `all` for listing instances, and
 * `update` for modifying instance attributes and saving changes.
 The console provides the ability to manage objects, view their information, and perform actions on them, enhancing the functionality and control over the program.
