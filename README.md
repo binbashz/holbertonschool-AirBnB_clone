@@ -101,7 +101,26 @@ All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest
 ### The command interpreter, also known as the console,
 ### allows users to interact with classes using several commands.
 
-How to use it
+
+
+
+#### Project Structure
+The project follows the following structure:
+
+* console.py: The main entry point of the console application.
+* models/: Contains the classes representing AirBnB objects.
+* models/base_model.py: Defines the BaseModel class, from which other classes inherit.
+* models/state.py: Defines the State class.
+* models/place.py: Defines the Place class
+* models/city.py: Defines the City class.
+* models/review.py: Defines the Review class.
+* models/user.py: Defines the User class.
+* models/amenity.py: Defines the Amenity class.
+* models/engine/: Contains the storage engine for persisting data.
+* models/engine/file_storage.py: Implements the FileStorage class for storing data in JSON files.
+* tests/: Contains unit tests for the project.
+
+#### How to use it
 
 Run the command interpreter with ./console.py
 
