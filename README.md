@@ -98,13 +98,12 @@ All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest
 
 --------------------------------------------------------------------------------------------------------
 
-### The command interpreter, also known as the console,
-### allows users to interact with classes using several commands.
+#### The command interpreter, also known as the console, allows users to interact with classes using several commands.
 
 
 
 
-#### Project Structure
+##### Project Structure
 The project follows the following structure:
 
 * console.py: The main entry point of the console application.
