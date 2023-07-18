@@ -135,14 +135,8 @@ To quit the console, the quit command does just fine. Ctrl+D (EOF) is supported 
 
 
 ### Examples
-`create BaseModel`
+![image](https://github.com/binbashz/holbertonschool-AirBnB_clone/assets/113607320/1d609b93-1931-49ae-8d31-d068a8dd8515)
 
-`create User`
-
-`all BaseModel`
-
-`destroy BaseModel` 7aff9a-6318-345345tg-87b6-9o0-23480934c55907
-
-`all`
-
-`quit`
+At first we open the file ´console.py´. Then we show there's no object created previously, so we create a ´User´ and two ´Place´. After that we use the ´all´ command to see that everything is all right and those objects were succesfuly created.
+´update´ command is used to add or change something to an object, and in this example we add an email to the ´User´
+To finish the example we ´destroy´ a ´Place´, then show all the objects again and finally get out of ´console.py´ executing ´quit´ command.
